@@ -1,0 +1,123 @@
+@import url("theme.css");
+body {
+    background: var(--cg-bg);
+    color: var(--cg-text);
+    font-family: var(--font-body);
+    font-weight: 300;
+}
+
+h1 {
+    font-family: var(--font-display);
+    color: var(--cg-gold);
+}
+
+.text-muted {
+    color: var(--cg-muted) !important;
+}
+
+.auth-card {
+    background: var(--cg-bg-alt);
+    border: 1px solid var(--cg-hair);
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, calc(0.5 * var(--cg-shadow-strength)));
+}
+
+.form-label {
+    font-size: 0.85rem;
+    color: var(--cg-text-soft);
+    margin-bottom: 0.3rem;
+}
+.form-control {
+    background: transparent;
+    border: 1px solid var(--cg-gold-glow);
+    color: var(--cg-text);
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    background: transparent;
+    color: var(--cg-text);
+    border-color: var(--cg-gold);
+    box-shadow: 0 0 0 0.2rem var(--cg-hair);
+}
+
+.btn-gold {
+    background: var(--cg-gold);
+    color: var(--cg-bg);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: none;
+}
+
+.btn-gold:hover {
+    background: var(--cg-gold-light);
+}
+.auth-link {
+    color: var(--cg-gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.auth-link:hover {
+    border-bottom: 1px solid var(--cg-gold);
+}
+
+.custom-date-wrap .input-group-text {
+    background: transparent;
+    border: 1px solid var(--cg-gold-glow);
+    border-left: none; 
+    color: var(--cg-gold);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.custom-date-wrap .form-control {
+    border-right: none;
+}
+
+.custom-date-wrap .form-control:focus + .input-group-text {
+    border-color: var(--cg-gold);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.form-floating > label {
+    color: var(--cg-muted);
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: var(--cg-gold);
+}
+
+.form-floating > .form-control:focus ~ label::after,
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after {
+    background-color: transparent !important;
+}
+
+.custom-date-wrap .form-floating .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* ---------- Form validation states (login, register, reset) ---------- */
+.form-control.is-invalid {
+    border-color: var(--cg-danger);
+    background-image: none;
+}
+
+.field-error {
+    color: var(--cg-danger);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.field-error:empty {
+    display: none;
+}

@@ -1,0 +1,236 @@
+@import url("theme.css");
+/* ==========================================================
+   Celestia Gems — Contact Page
+   ========================================================== */
+
+/* ==========================================================
+   Base
+   ========================================================== */
+
+body {
+    background: var(--cg-bg);
+    color: var(--cg-text);
+    font-family: var(--font-body);
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+}
+
+/* ==========================================================
+   Page Header
+   ========================================================== */
+
+.contact-hero {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.eyebrow {
+    margin-bottom: 0;
+    color: var(--cg-gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+}
+
+.contact-hero h1 {
+    margin: 0.6rem 0 1rem;
+    font-size: 2.6rem;
+}
+
+.contact-hero p:not(.eyebrow) {
+    margin-bottom: 0;
+    color: var(--cg-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+
+/* ==========================================================
+   Contact Form Card
+   ========================================================== */
+
+.contact-card {
+    padding: 2.2rem 2.4rem;
+    background: var(--cg-bg-alt);
+    border: 1px solid var(--cg-hair);
+    border-radius: 4px;
+    box-shadow: 0 0 40px var(--cg-gold-wash);
+}
+
+.contact-card h2 {
+    margin-bottom: 1.6rem;
+    font-size: 1.4rem;
+}
+
+/* Labels */
+
+.contact-card .form-label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--cg-gold);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* Inputs */
+
+.contact-card .form-control,
+.contact-card .form-select {
+    min-height: 44px;
+    padding: 0.65rem 0.85rem;
+    background-color: var(--cg-surface);
+    border: 1px solid var(--cg-hair);
+    border-radius: 3px;
+    color: var(--cg-text);
+    font-size: 0.88rem;
+}
+
+.contact-card .form-control::placeholder {
+    color: var(--cg-faint);
+}
+
+/* Input focus */
+
+.contact-card .form-control:focus,
+.contact-card .form-select:focus {
+    background-color: var(--cg-surface);
+    border-color: var(--cg-gold);
+    color: var(--cg-text);
+    box-shadow: 0 0 0 0.18rem var(--cg-gold-soft);
+}
+
+/* ==========================================================
+   Select Dropdown
+   ========================================================== */
+
+.contact-card .form-select {
+    padding-right: 2.75rem;
+
+    /* Custom gold dropdown arrow */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23a79bb8' stroke-width='1.5' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+
+    /* THIS FIXES THE REPEATING ARROWS */
+    background-repeat: no-repeat;
+    background-position: right 0.85rem center;
+    background-size: 16px 16px;
+}
+
+/* Keep placeholder text muted */
+.contact-card .form-select:invalid {
+    color: var(--cg-text-soft);
+}
+
+/* Dropdown options */
+.contact-card .form-select option {
+    background: var(--cg-bg-alt);
+    color: var(--cg-text);
+}
+
+/* ==========================================================
+   Textarea
+   ========================================================== */
+
+.contact-card textarea.form-control {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* ==========================================================
+   Gold Button
+   ========================================================== */
+
+.btn-gold {
+    --bs-btn-color: var(--cg-ink-on-gold);
+    --bs-btn-bg: var(--cg-gold);
+    --bs-btn-border-color: var(--cg-gold);
+
+    --bs-btn-hover-color: var(--cg-ink-on-gold);
+    --bs-btn-hover-bg: var(--cg-gold-light);
+    --bs-btn-hover-border-color: var(--cg-gold-light);
+
+    border-radius: 3px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+/* ==========================================================
+   Contact Information
+   ========================================================== */
+
+.contact-info h2 {
+    margin-bottom: 1.6rem;
+    font-size: 1.4rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.info-icon {
+    display: flex;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--cg-bg-alt);
+    border: 1px solid var(--cg-hair);
+    border-radius: 50%;
+}
+
+.info-icon svg {
+    width: 17px;
+    height: 17px;
+    color: var(--cg-gold);
+}
+
+.info-item h4 {
+    margin-bottom: 0.3rem;
+    color: var(--cg-text);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.info-item p {
+    margin-bottom: 0;
+    color: var(--cg-muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+@media (max-width: 991px) {
+    .contact-hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .contact-card {
+        padding: 1.8rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .contact-hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+}

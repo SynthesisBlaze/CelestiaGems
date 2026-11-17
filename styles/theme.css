@@ -1,0 +1,221 @@
+/* ============================================================
+   Celestia Gems — design tokens (single source of truth)
+
+   Every stylesheet loads this file first (via @import), so the
+   palette, fonts and shared notice styles below are defined ONCE.
+   Change a value here and it changes everywhere — storefront and
+   admin alike.
+   ============================================================ */
+
+:root {
+    /* ---------- Typography ---------- */
+    --font-display: 'Cormorant Garamond', serif;   /* headings, brand, navigation */
+    --font-body: 'Jost', sans-serif;               /* body text, buttons, forms */
+    --font-mono: 'Consolas', 'Menlo', monospace;   /* code / reference numbers */
+
+    /* ---------- Surfaces ---------- */
+    --cg-bg: #0A0A1A;                              /* page background (deep navy) */
+    --cg-bg-alt: #111122;                          /* panels / cards */
+    --cg-bg-raised: #181931;                       /* elevated panels, hover surfaces */
+    --cg-surface: rgba(255, 255, 255, 0.03);       /* faint fill on top of any surface */
+
+    /* ---------- Text ---------- */
+    --cg-text: #FFFFFF;                            /* primary text */
+    --cg-text-soft: rgba(255, 255, 255, 0.7);      /* secondary text */
+    --cg-muted: rgba(255, 255, 255, 0.6);          /* labels, captions */
+    --cg-faint: rgba(255, 255, 255, 0.4);          /* placeholders, disabled */
+
+    /* ---------- Gold accent ---------- */
+    --cg-gold: #C9A15C;                            /* primary accent */
+    --cg-gold-light: #E0B875;                      /* hover / highlight */
+    --cg-gold-dim: #8A6C3D;                        /* subdued accent */
+    --cg-ink-on-gold: #1C140C;                     /* dark text on gold buttons/badges */
+
+    /* Translucent gold — one scale, use these instead of ad-hoc rgba() */
+    --cg-gold-wash: rgba(201, 161, 92, 0.08);      /* subtle fills, row hover */
+    --cg-gold-soft: rgba(201, 161, 92, 0.15);      /* selected / badge fills */
+    --cg-hair: rgba(201, 161, 92, 0.2);            /* brand borders & dividers */
+    --cg-gold-glow: rgba(201, 161, 92, 0.3);       /* focus rings, glows */
+    --cg-line-strong: rgba(201, 161, 92, 0.4);     /* active / emphasised borders */
+
+    /* Neutral divider (dense lists, tables) */
+    --cg-divider: rgba(255, 255, 255, 0.1);
+
+    /* ---------- Semantic colors ---------- */
+    --cg-danger: #E08585;
+    --cg-success: #4CAF7D;
+    --cg-info: #5B9BD5;
+    --cg-pending: #7D6CE0;
+
+    /* RGB channels — for one-off translucent versions, e.g.
+       background: rgba(var(--cg-danger-rgb), 0.1); */
+    --cg-gold-rgb: 201, 161, 92;
+    --cg-gold-light-rgb: 224, 184, 117;
+    --cg-bg-rgb: 10, 10, 26;
+    --cg-danger-rgb: 224, 133, 133;
+    --cg-success-rgb: 76, 175, 125;
+    --cg-info-rgb: 91, 155, 213;
+    --cg-pending-rgb: 125, 108, 224;
+    --cg-text-rgb: 255, 255, 255;                  /* for translucent text: rgba(var(--cg-text-rgb), 0.8) */
+
+    /* Shadow strength — multiplies the alpha of black shadows, e.g.
+       box-shadow: 0 8px 24px rgba(0, 0, 0, calc(0.4 * var(--cg-shadow-strength)));
+       1 = full (dark mode). Light mode lowers it so shadows don't look muddy. */
+    --cg-shadow-strength: 1;
+
+    /* ---------- Order / booking status colors ---------- */
+    --st-shipped: var(--cg-gold);
+    --st-delivered: var(--cg-success);
+    --st-pending: var(--cg-pending);
+    --st-processing: var(--cg-info);
+    --st-cancelled: var(--cg-danger);
+}
+
+/* ============================================================
+   Light mode — "Pearl" palette
+   Turned on by <html data-theme="light"> (set by the navbar toggle,
+   remembered in localStorage — see components/theme_init.php).
+   Only colors change; every name matches the dark tokens above.
+   ============================================================ */
+:root[data-theme="light"] {
+    color-scheme: light;
+
+    /* Surfaces — warm ivory */
+    --cg-bg: #FAF7F2;
+    --cg-bg-alt: #FFFFFF;
+    --cg-bg-raised: #F1EBE1;
+    --cg-surface: rgba(30, 27, 22, 0.03);
+
+    /* Text — warm near-black */
+    --cg-text: #1E1B16;
+    --cg-text-soft: rgba(30, 27, 22, 0.74);
+    --cg-muted: rgba(30, 27, 22, 0.64);
+    --cg-faint: rgba(30, 27, 22, 0.45);
+
+    /* Gold — deepened so it stays readable on ivory.
+       --cg-gold-light is the hover color, so here it goes darker, not lighter. */
+    --cg-gold: #8E6A2C;
+    --cg-gold-light: #775722;
+    --cg-gold-dim: #CBB083;
+    --cg-ink-on-gold: #FFFFFF;
+
+    --cg-gold-wash: rgba(142, 106, 44, 0.08);
+    --cg-gold-soft: rgba(142, 106, 44, 0.14);
+    --cg-hair: rgba(142, 106, 44, 0.24);
+    --cg-gold-glow: rgba(142, 106, 44, 0.22);
+    --cg-line-strong: rgba(142, 106, 44, 0.5);
+
+    --cg-divider: rgba(30, 27, 22, 0.09);
+
+    /* Semantic — darker so they pass contrast on light backgrounds */
+    --cg-danger: #B23B3B;
+    --cg-success: #2B7A50;
+    --cg-info: #2D6AA6;
+    --cg-pending: #5A48BF;
+
+    --cg-gold-rgb: 142, 106, 44;
+    --cg-gold-light-rgb: 119, 87, 34;
+    --cg-bg-rgb: 250, 247, 242;
+    --cg-danger-rgb: 178, 59, 59;
+    --cg-success-rgb: 43, 122, 80;
+    --cg-info-rgb: 45, 106, 166;
+    --cg-pending-rgb: 90, 72, 191;
+    --cg-text-rgb: 30, 27, 22;
+
+    --cg-shadow-strength: 0.35;
+}
+
+/* Bootstrap's close "X" is inverted to white for the dark theme in a few
+   stylesheets — keep it dark on the light theme. */
+:root[data-theme="light"] .btn-close,
+:root[data-theme="light"] .btn-close-white {
+    filter: none !important;
+}
+
+/* Native date picker was pinned to dark */
+:root[data-theme="light"] .booking-page-wrapper .booking-date-input {
+    color-scheme: light;
+}
+
+/* ---------- Theme toggle button (components/theme_toggle.php) ---------- */
+.cg-theme-toggle {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--cg-hair);
+    background: transparent;
+    color: var(--cg-text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.cg-theme-toggle:hover {
+    color: var(--cg-gold);
+    border-color: var(--cg-line-strong);
+    background: var(--cg-gold-wash);
+}
+
+.cg-theme-toggle:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem var(--cg-gold-glow);
+}
+
+/* Sun in dark mode (click = go light), moon in light mode */
+.cg-theme-toggle .icon-moon { display: none; }
+:root[data-theme="light"] .cg-theme-toggle .icon-sun { display: none; }
+:root[data-theme="light"] .cg-theme-toggle .icon-moon { display: block; }
+
+/* Brief cross-fade while switching themes (added/removed by the toggle) */
+html.cg-theme-switching,
+html.cg-theme-switching *,
+html.cg-theme-switching *::before,
+html.cg-theme-switching *::after {
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease, fill .3s ease, stroke .3s ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.cg-theme-switching,
+    html.cg-theme-switching * {
+        transition: none !important;
+    }
+}
+
+/* ---------- Base typography (applies site-wide) ---------- */
+body {
+    font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+}
+
+/* ---------- Shared notice / alert boxes ----------
+   Use with Bootstrap's .alert:
+   <div class="alert cg-notice cg-notice--error">…</div>            */
+.cg-notice {
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.cg-notice.cg-notice--error {
+    background: rgba(var(--cg-danger-rgb), 0.1);
+    border: 1px solid var(--cg-danger);
+    color: var(--cg-danger);
+}
+
+.cg-notice.cg-notice--success {
+    background: rgba(var(--cg-success-rgb), 0.1);
+    border: 1px solid var(--cg-success);
+    color: var(--cg-success);
+}
+
+.cg-notice.cg-notice--info {
+    background: var(--cg-gold-wash);
+    border: 1px solid var(--cg-gold);
+    color: var(--cg-gold);
+}

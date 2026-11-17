@@ -1,0 +1,503 @@
+@import url("theme.css");
+/* ==========================================================
+   Celestia Gems — checkout.php page styles
+   Same token pattern as cart.css / navbar.php / account.css.
+   Falls back to the brand palette if those vars aren't already
+   defined on the page (defensive, same approach as footer.php).
+   ========================================================== */
+body {
+    background: var(--cg-bg);
+    color: var(--cg-text);
+    font-family: var(--font-body);
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+}
+
+.checkout-main {
+    padding: 3rem 0 5rem;
+}
+
+/* ---------- Page header ---------- */
+
+.checkout-breadcrumb {
+    font-size: .75rem;
+    letter-spacing: .05em;
+    color: var(--cg-muted);
+    margin-bottom: 1rem;
+}
+
+.checkout-breadcrumb a {
+    color: var(--cg-muted);
+    text-decoration: none;
+}
+
+.checkout-breadcrumb a:hover {
+    color: var(--cg-gold-light);
+}
+
+.checkout-breadcrumb .sep {
+    margin: 0 .4rem;
+    color: var(--cg-hair);
+}
+
+.checkout-breadcrumb .current {
+    color: var(--cg-gold);
+}
+
+.checkout-title {
+    font-size: 2rem;
+    margin-bottom: 1.75rem;
+}
+
+/* ---------- Journey progress ---------- */
+
+.cg-progress {
+    display: flex;
+    align-items: center;
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+}
+
+.cg-progress-step {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    flex-shrink: 0;
+}
+
+.cg-progress-step .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cg-hair);
+    border: 1px solid var(--cg-hair);
+}
+
+.cg-progress-step.done .dot {
+    background: var(--cg-gold);
+    border-color: var(--cg-gold);
+}
+
+.cg-progress-step.current .dot {
+    background: var(--cg-bg);
+    border: 2px solid var(--cg-gold);
+    width: 9px;
+    height: 9px;
+}
+
+.cg-progress-step .label {
+    font-size: .78rem;
+    letter-spacing: .04em;
+    color: var(--cg-muted);
+}
+
+.cg-progress-step.done .label {
+    color: var(--cg-text);
+}
+
+.cg-progress-step.current .label {
+    color: var(--cg-gold-light);
+    font-weight: 500;
+}
+
+.cg-progress-line {
+    flex: 1;
+    height: 1px;
+    background: var(--cg-hair);
+    margin: 0 .75rem;
+}
+
+.cg-progress-line.filled {
+    background: var(--cg-gold);
+}
+
+/* ---------- Alert ---------- */
+
+.cg-alert {
+    background: rgba(var(--cg-danger-rgb), 0.08);
+    border: 1px solid rgba(var(--cg-danger-rgb), 0.35);
+    color: var(--cg-danger);
+    border-radius: 2px;
+    padding: .85rem 1.1rem;
+    font-size: .88rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- Unified checkout card ---------- */
+
+.cg-checkout-card {
+    display: flex;
+    align-items: stretch;
+    background: var(--cg-bg-alt);
+    border: 1px solid var(--cg-hair);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.cg-pane {
+    padding: 2.4rem 2.6rem;
+}
+
+.cg-pane-summary {
+    flex: 0 0 36%;
+    max-width: 36%;
+    border-right: 1px solid var(--cg-hair);
+    background: rgba(0, 0, 0, calc(0.12 * var(--cg-shadow-strength)));
+    display: flex;
+    flex-direction: column;
+}
+
+.cg-pane-form {
+    flex: 1;
+    min-width: 0;
+}
+
+.cg-pane-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .9rem;
+}
+
+.cg-pill {
+    font-size: .68rem;
+    letter-spacing: .06em;
+    color: var(--cg-muted);
+    border: 1px solid var(--cg-hair);
+    border-radius: 999px;
+    padding: .3rem .75rem;
+}
+
+.cg-pane-heading {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+}
+
+.cg-pane-sub {
+    font-size: .85rem;
+    color: var(--cg-muted);
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 991.98px) {
+    .cg-checkout-card {
+        flex-direction: column;
+    }
+
+    .cg-pane-summary {
+        flex: 1 1 auto;
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--cg-hair);
+    }
+
+    .cg-pane {
+        padding: 1.9rem;
+    }
+}
+
+.cg-kicker {
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--cg-muted);
+    margin-bottom: .9rem;
+}
+
+.cg-section {
+    padding-bottom: 1.75rem;
+    margin-bottom: 1.75rem;
+    border-bottom: 1px solid var(--cg-hair);
+}
+
+.cg-section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- Contact (unboxed strip) ---------- */
+
+.cg-contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.cg-contact-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--cg-text);
+    margin-right: .9rem;
+}
+
+.cg-contact-meta {
+    font-size: .85rem;
+    color: var(--cg-muted);
+}
+
+.cg-edit-link {
+    font-size: .75rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--cg-gold);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.cg-edit-link:hover {
+    color: var(--cg-gold-light);
+}
+
+/* ---------- Delivery address fields ---------- */
+
+.cg-address-search {
+    margin-bottom: 1.1rem;
+}
+
+.cg-address-search gmp-place-autocomplete {
+    width: 100%;
+}
+
+.cg-label {
+    display: block;
+    font-size: .72rem;
+    letter-spacing: .04em;
+    color: var(--cg-muted);
+    margin-bottom: .35rem;
+}
+
+.cg-label span {
+    color: var(--cg-faint);
+}
+
+.cg-input {
+    width: 100%;
+    border: 1px solid var(--cg-hair);
+    border-radius: 2px;
+    background: var(--cg-surface);
+    padding: .6rem .8rem;
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: .9rem;
+    color: var(--cg-text);
+}
+
+.cg-input::placeholder {
+    color: var(--cg-faint);
+}
+
+.cg-input:focus {
+    outline: none;
+    border-color: var(--cg-gold);
+    background: var(--cg-surface);
+    box-shadow: 0 0 0 3px var(--cg-gold-soft);
+}
+
+.cg-map {
+    height: 220px;
+    border-radius: 2px;
+    margin-top: 1.25rem;
+    overflow: hidden;
+    border: 1px solid var(--cg-hair);
+    filter: saturate(0.85) brightness(0.95);
+}
+
+.cg-hint {
+    font-size: .76rem;
+    color: var(--cg-muted);
+    margin: .6rem 0 0;
+}
+
+/* ---------- Payment (slim accented row) ---------- */
+
+.cg-payment-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-left: 2px solid var(--cg-gold);
+    background: var(--cg-surface);
+    border-radius: 0 2px 2px 0;
+    padding: 1.1rem 1.25rem;
+}
+
+.cg-payment-glyph {
+    color: var(--cg-gold);
+    flex-shrink: 0;
+    margin-top: .1rem;
+}
+
+.cg-payment-glyph svg {
+    width: 26px;
+    height: 26px;
+}
+
+.cg-payment-title {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--cg-text);
+}
+
+.cg-payment-desc {
+    display: block;
+    font-size: .82rem;
+    color: var(--cg-muted);
+    margin-top: .15rem;
+}
+
+.cg-payment-check {
+    color: var(--cg-gold);
+    font-size: 1.05rem;
+    margin-top: .2rem;
+}
+
+/* ---------- Items list (used inside the Summary pane) ---------- */
+
+.cg-item-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.cg-item-row {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    padding: .85rem 0;
+    border-bottom: 1px solid var(--cg-hair);
+}
+
+.cg-item-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.cg-item-row img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--cg-hair);
+    flex-shrink: 0;
+}
+
+.cg-item-name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--cg-text);
+    line-height: 1.2;
+}
+
+.cg-item-meta {
+    font-size: .74rem;
+    color: var(--cg-muted);
+    margin-top: .15rem;
+}
+
+.cg-item-price {
+    font-weight: 600;
+    font-size: .88rem;
+    color: var(--cg-gold-light);
+    white-space: nowrap;
+}
+
+/* ---------- Totals block (inside the Summary pane) ---------- */
+
+.cg-box-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: .85rem;
+    color: var(--cg-muted);
+    padding: .4rem 0;
+}
+
+.cg-box-line .is-free {
+    color: var(--cg-gold-light);
+}
+
+.cg-box-divider {
+    height: 1px;
+    background: var(--cg-hair);
+    margin: .5rem 0 .9rem;
+}
+
+.cg-box-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 1.3rem;
+    color: var(--cg-text);
+    margin-top: .5rem;
+    padding-top: .9rem;
+    border-top: 1px solid var(--cg-hair);
+}
+
+.cg-box-total span:last-child {
+    color: var(--cg-gold);
+}
+
+/* ---------- Place order (bottom of the Checkout pane) ---------- */
+
+.cg-place-order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    width: 100%;
+    background: var(--cg-gold);
+    color: var(--cg-ink-on-gold);
+    border: none;
+    border-radius: 2px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: .8rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: .95rem 0;
+    transition: background .15s ease;
+}
+
+.cg-place-order .arrow {
+    transition: transform .15s ease;
+}
+
+.cg-place-order:hover {
+    background: var(--cg-gold-light);
+}
+
+.cg-place-order:hover .arrow {
+    transform: translateX(3px);
+}
+
+.cg-back-link {
+    display: block;
+    text-align: center;
+    font-size: .78rem;
+    letter-spacing: .04em;
+    color: var(--cg-muted);
+    text-decoration: none;
+    margin-top: .9rem;
+}
+
+.cg-back-link:hover {
+    color: var(--cg-text);
+}
+
+.cg-box-note {
+    font-size: .74rem;
+    color: var(--cg-muted);
+    text-align: center;
+    margin: 1.4rem 0 0;
+    line-height: 1.55;
+}

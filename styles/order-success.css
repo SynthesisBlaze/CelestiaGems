@@ -1,0 +1,277 @@
+@import url("theme.css");
+/* ==========================================================
+   Celestia Gems — order-success.php page styles
+   Same token pattern as cart.css / checkout.css.
+   ========================================================== */
+body {
+    background: var(--cg-bg);
+    color: var(--cg-text);
+    font-family: var(--font-body);
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+}
+
+.success-main {
+    padding: 4rem 0 5rem;
+}
+
+/* ---------- Hero / seal ---------- */
+
+.success-hero {
+    max-width: 640px;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+}
+
+.success-seal {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 1.75rem;
+    border-radius: 50%;
+    background: var(--cg-bg-alt);
+    border: 1px solid var(--cg-hair);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-seal svg {
+    width: 58px;
+    height: 58px;
+}
+
+.success-kicker {
+    font-size: .72rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--cg-gold);
+    margin-bottom: .75rem;
+}
+
+.success-title {
+    font-size: 2.1rem;
+    line-height: 1.25;
+    color: var(--cg-text);
+    margin-bottom: 1rem;
+}
+
+.success-sub {
+    color: var(--cg-muted);
+    font-size: .95rem;
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+}
+
+.success-sub strong {
+    color: var(--cg-gold-light);
+    font-weight: 500;
+}
+
+.success-eta {
+    display: inline-flex;
+    flex-direction: column;
+    gap: .2rem;
+    border: 1px solid var(--cg-hair);
+    border-radius: 2px;
+    padding: .9rem 1.75rem;
+    background: var(--cg-bg-alt);
+}
+
+.success-eta span {
+    font-size: .68rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--cg-muted);
+}
+
+.success-eta strong {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--cg-gold-light);
+}
+
+/* ---------- Recap grid ---------- */
+
+.success-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+@media (max-width: 767.98px) {
+    .success-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.success-panel {
+    background: var(--cg-bg-alt);
+    border: 1px solid var(--cg-hair);
+    border-radius: 2px;
+    padding: 1.75rem 1.7rem;
+}
+
+.cg-kicker {
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--cg-muted);
+    margin-bottom: 1.1rem;
+}
+
+.recap-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: .55rem 0;
+    border-bottom: 1px solid var(--cg-hair);
+    font-size: .87rem;
+}
+
+.recap-row:last-of-type {
+    border-bottom: none;
+}
+
+.recap-label {
+    color: var(--cg-muted);
+    white-space: nowrap;
+}
+
+.recap-value {
+    text-align: right;
+    color: var(--cg-text);
+}
+
+.badge-status {
+    display: inline-block;
+    background: var(--cg-surface);
+    border: 1px solid var(--cg-hair);
+    border-radius: 20px;
+    padding: .15rem .75rem;
+    font-size: .74rem;
+    letter-spacing: .03em;
+    color: var(--cg-gold-light);
+}
+
+.recap-note {
+    font-size: .8rem;
+    color: var(--cg-muted);
+    line-height: 1.55;
+    margin: 1.2rem 0 0;
+}
+
+/* Item list — same visual language as cart-item-row, compact form */
+
+.cg-item-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.cg-item-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .85rem 0;
+    border-bottom: 1px solid var(--cg-hair);
+}
+
+.cg-item-row:last-child {
+    border-bottom: none;
+}
+
+.cg-item-row img {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--cg-hair);
+    flex-shrink: 0;
+}
+
+.cg-item-name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--cg-text);
+}
+
+.cg-item-meta {
+    font-size: .76rem;
+    color: var(--cg-muted);
+    margin-top: .1rem;
+}
+
+.cg-item-price {
+    font-weight: 600;
+    font-size: .92rem;
+    color: var(--cg-gold-light);
+    white-space: nowrap;
+}
+
+.recap-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 1.15rem;
+    color: var(--cg-text);
+    border-top: 1px solid var(--cg-hair);
+    margin-top: .5rem;
+    padding-top: .9rem;
+}
+
+.recap-total span:last-child {
+    color: var(--cg-gold);
+    font-weight: 600;
+}
+
+/* ---------- Actions ---------- */
+
+.success-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.75rem;
+}
+
+.btn-gold-fill,
+.btn-secondary-line {
+    display: inline-block;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: .8rem 1.9rem;
+    border-radius: 2px;
+}
+
+.btn-gold-fill {
+    background: var(--cg-gold);
+    color: var(--cg-ink-on-gold);
+}
+
+.btn-gold-fill:hover {
+    background: var(--cg-gold-light);
+    color: var(--cg-ink-on-gold);
+}
+
+.btn-secondary-line {
+    border: 1px solid var(--cg-hair);
+    color: var(--cg-muted);
+    background: transparent;
+}
+
+.btn-secondary-line:hover {
+    border-color: var(--cg-gold);
+    color: var(--cg-gold-light);
+}

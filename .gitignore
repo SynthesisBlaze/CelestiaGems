@@ -1,0 +1,8 @@
+# Local config files containing real API keys — never commit these.
+# Copy the matching *.example.php template and fill in your keys.
+functions/brevo_config.php
+functions/gemini_config.php
+functions/paymongo_config.php
+functions/google_maps_config.php
+functions/maya_config.php
+functions/mailjet_config.php

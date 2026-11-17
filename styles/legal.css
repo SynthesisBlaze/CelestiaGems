@@ -1,0 +1,166 @@
+@import url("theme.css");
+/* ========================================
+   Celestia Gems — Privacy Policy & Terms of Service
+======================================== */
+
+body {
+    background: var(--cg-bg);
+    color: var(--cg-text);
+    font-family: var(--font-body);
+    font-weight: 300;
+}
+
+.legal-hero {
+    max-width: 760px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.legal-hero .eyebrow {
+    font-size: .75rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--cg-gold);
+    font-weight: 500;
+}
+
+.legal-hero h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    margin: .6rem 0 .8rem;
+}
+
+.legal-hero p {
+    color: var(--cg-muted);
+    font-size: .92rem;
+    margin: 0;
+}
+
+.legal-layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 3rem;
+    max-width: 940px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+@media (max-width: 860px) {
+    .legal-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.legal-toc {
+    position: sticky;
+    top: 140px;
+    border-left: 1px solid var(--cg-hair);
+    padding-left: 1rem;
+}
+
+@media (max-width: 860px) {
+    .legal-toc {
+        position: static;
+    }
+}
+
+.legal-toc p {
+    font-size: .7rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--cg-muted);
+    margin-bottom: .6rem;
+}
+
+.legal-toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: .45rem;
+    counter-reset: toc;
+}
+
+.legal-toc li {
+    counter-increment: toc;
+}
+
+.legal-toc a {
+    color: var(--cg-text-soft);
+    text-decoration: none;
+    font-size: .85rem;
+}
+
+.legal-toc a::before {
+    content: counter(toc) ". ";
+    color: var(--cg-gold);
+}
+
+.legal-toc a:hover {
+    color: var(--cg-gold);
+}
+
+.legal-body {
+    min-width: 0;
+    background: var(--cg-bg-alt);
+    border: 1px solid var(--cg-hair);
+    border-radius: 6px;
+    padding: 2.2rem 2.4rem;
+}
+
+@media (max-width: 576px) {
+    .legal-body {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+.legal-body section + section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--cg-divider);
+}
+
+.legal-body h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0 0 .8rem;
+    scroll-margin-top: 140px;
+}
+
+.legal-body p,
+.legal-body li {
+    color: var(--cg-text-soft);
+    font-size: .93rem;
+    line-height: 1.8;
+}
+
+.legal-body ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.legal-body strong {
+    color: var(--cg-text);
+    font-weight: 500;
+}
+
+.legal-body a {
+    color: var(--cg-gold);
+}
+
+.legal-contact {
+    margin-top: .5rem;
+    padding: 1rem 1.2rem;
+    background: var(--cg-gold-wash);
+    border: 1px solid var(--cg-hair);
+    border-radius: 4px;
+    font-size: .9rem;
+    color: var(--cg-text-soft);
+}
+
+.legal-contact div + div {
+    margin-top: .25rem;
+}
